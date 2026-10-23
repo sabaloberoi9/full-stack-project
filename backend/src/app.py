@@ -1,0 +1,23 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from src.routes.challenge import router as challenge_router
+from src.database.db import engine, Base
+
+# This line ensures the 'challenges' table is created in SQLite
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI(title="Coding Challenge Generator")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://localhost:5174"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(challenge_router, prefix="/api")
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}

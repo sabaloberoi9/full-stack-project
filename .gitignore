@@ -1,0 +1,27 @@
+# Environment Variables & Secrets
+.env
+*.env
+*.env.local
+
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+*.sqlite3
+*.db
+challenges.db
+
+# Node / React
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# IDE / OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
