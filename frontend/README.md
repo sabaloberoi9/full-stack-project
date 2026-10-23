@@ -23,7 +23,7 @@ While the base tutorial demonstrated basic challenge generation, the following e
   * Data Structures and Algorithms
   * Large Language Models (Prompting, Architecture, Logits)
   * Cloud Architecture
-* Added difficulty selection (Easy, Medium, Hard) that dynamically modifies prompts and temperature parameters.
+
 
 ### 2. State-Driven Answer Tracking and Schema Migrations
 * Modified the SQLAlchemy `Challenge` model by adding `selected_option` and `is_correct` database columns.
@@ -48,9 +48,6 @@ While the base tutorial demonstrated basic challenge generation, the following e
 ### 6. React Component Recycling Bug Fix
 * Diagnosed and fixed a critical UI bug where selecting an option on an initial question caused subsequent newly generated questions to render as already answered.
 * Implemented strict component lifecycle re-mounting via unique identification keys (`key={challenge.id}`).
-
-### 7. Dual-View Interface Architecture
-* Re-engineered the single-page view into a clean two-tab navigation system (`App.jsx`), allowing users to toggle between the **Generator** and the **History Panel** to review previous submissions and stored explanations without losing session state.
 
 ---
 
